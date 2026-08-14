@@ -3,7 +3,7 @@ import type {
   FinalReport, LearningRoadmapItem, DashboardData, QuestionItem 
 } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://hiremate-backend-production-c51f.up.railway.app/api/v1';
 
 class ApiService {
   private token: string | null = null;
