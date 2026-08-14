@@ -808,7 +808,7 @@ export const DemoInterviewPage: React.FC<DemoInterviewPageProps> = ({
             >
               <span>Aptitude</span>
               <span className="px-2 py-0.5 rounded-md bg-dark-900/40 text-[10px]">
-                {aptAttemptedTotal} / 30
+                {metrics.aptAttemptedTotal} / 30
               </span>
             </button>
 
@@ -826,7 +826,7 @@ export const DemoInterviewPage: React.FC<DemoInterviewPageProps> = ({
             >
               <span>Technical</span>
               <span className="px-2 py-0.5 rounded-md bg-dark-900/40 text-[10px]">
-                {techAttemptedTotal} / 30
+                {metrics.techAttemptedTotal} / 30
               </span>
             </button>
 
@@ -844,7 +844,7 @@ export const DemoInterviewPage: React.FC<DemoInterviewPageProps> = ({
             >
               <span>HR Round</span>
               <span className="px-2 py-0.5 rounded-md bg-dark-900/40 text-[10px]">
-                {hrAttemptedTotal} / 10
+                {metrics.hrAttemptedTotal} / 10
               </span>
             </button>
 
@@ -859,7 +859,7 @@ export const DemoInterviewPage: React.FC<DemoInterviewPageProps> = ({
 
           {/* Attempted summary indicator */}
           <div className="text-xs font-mono text-slate-400">
-            Total Attempted: <strong className="text-amber-400">{totalAttempted}</strong> / 70 | Unanswered: <strong className="text-slate-300">{totalUnanswered}</strong>
+            Total Attempted: <strong className="text-amber-400">{metrics.totalAttempted}</strong> / 70 | Unanswered: <strong className="text-slate-300">{metrics.totalUnanswered}</strong>
           </div>
         </div>
 
@@ -1226,19 +1226,19 @@ export const DemoInterviewPage: React.FC<DemoInterviewPageProps> = ({
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-2 text-xs font-mono text-left">
               <div className="flex justify-between">
                 <span className="text-slate-400">Aptitude (Easy/Med/Hard):</span>
-                <span className="text-amber-400 font-bold">{aptAttemptedTotal} / 30 Attempted</span>
+                <span className="text-amber-400 font-bold">{metrics.aptAttemptedTotal} / 30 Attempted</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">Technical (Easy/Med/Hard):</span>
-                <span className="text-cyan-400 font-bold">{techAttemptedTotal} / 30 Attempted</span>
+                <span className="text-cyan-400 font-bold">{metrics.techAttemptedTotal} / 30 Attempted</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400">HR (Easy/Med/Hard):</span>
-                <span className="text-purple-400 font-bold">{hrAttemptedTotal} / 10 Answered</span>
+                <span className="text-purple-400 font-bold">{metrics.hrAttemptedTotal} / 10 Answered</span>
               </div>
               <div className="border-t border-white/10 pt-2 flex justify-between font-bold text-sm">
                 <span className="text-white">Total Completed:</span>
-                <span className="text-emerald-400">{totalAttempted} Attempted ({totalUnanswered} Unanswered)</span>
+                <span className="text-emerald-400">{metrics.totalAttempted} Attempted ({metrics.totalUnanswered} Unanswered)</span>
               </div>
             </div>
 

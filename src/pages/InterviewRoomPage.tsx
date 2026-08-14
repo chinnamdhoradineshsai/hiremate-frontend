@@ -35,7 +35,7 @@ export const InterviewRoomPage: React.FC<InterviewRoomProps> = ({ sessionId, onF
 
   const [aiState, setAiState] = useState<'idle' | 'thinking' | 'speaking' | 'listening' | 'interview'>('speaking');
   const [evaluating, setEvaluating] = useState(false);
-  const [currentEval, setCurrentEval] = useState<any>(null);
+  const [currentEval] = useState<any>(null);
 
   const [roundTransition, setRoundTransition] = useState<string | null>(null);
   const [timerSeconds, setTimerSeconds] = useState(3600);
