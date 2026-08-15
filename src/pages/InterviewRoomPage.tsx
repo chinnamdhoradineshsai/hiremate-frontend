@@ -281,6 +281,20 @@ export const InterviewRoomPage: React.FC<InterviewRoomProps> = ({ sessionId, onF
         selectedOption !== null ? selectedOption : undefined
       );
 
+      // Mark the current question as answered in local state so the live
+      // "Answered" counter updates immediately (counter reads q.answered / q.user_answer).
+      setQuestions((prev) =>
+        prev.map((q, idx) =>
+          idx === currentIndex
+            ? {
+                ...q,
+                answered: true,
+                user_answer: answerText || codeSubmission || (selectedOption !== null ? String(selectedOption) : q.user_answer),
+              }
+            : q
+        )
+      );
+
       setEvaluating(false);
       // Immediately advance to next question
       await handleNextQuestion();
@@ -290,6 +304,7 @@ export const InterviewRoomPage: React.FC<InterviewRoomProps> = ({ sessionId, onF
       setEvalError(err.message || 'Saving answer failed. Please click Retry.');
     }
   };
+
 
   const handleNextQuestion = async () => {
     if (isTimeExpired) return;
